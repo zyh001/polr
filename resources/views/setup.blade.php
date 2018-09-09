@@ -23,69 +23,69 @@ Setup
         </div>
 
         <form class='setup-form' method='POST' action='/setup'>
-            <h4>Database Configuration</h4>
+            <h4>数据库配置</h4>
 
-            <p>Database Host:</p>
+            <p>数据库主机地址:</p>
             <input type='text' class='form-control' name='db:host' value='localhost'>
 
-            <p>Database Port:</p>
+            <p>数据库主机端口:</p>
             <input type='text' class='form-control' name='db:port' value='3306'>
 
-            <p>Database Username:</p>
+            <p>数据库用户名:</p>
             <input type='text' class='form-control' name='db:username' value='root'>
 
-            <p>Database Password:</p>
+            <p>数据库用户密码:</p>
             <input type='password' class='form-control' name='db:password' value='password'>
 
             <p>
-                Database Name:
-                <setup-tooltip content="Name of existing database. You must create the Polr database manually."></setup-tooltip>
+                数据库名:
+                <setup-tooltip content="你必须手动创建属于Poly的数据库。"></setup-tooltip>
             </p>
             <input type='text' class='form-control' name='db:name' value='polr'>
 
 
-            <h4>Application Settings</h4>
+            <h4>程序设置</h4>
 
-            <p>Application Name:</p>
+            <p>网站名称:</p>
             <input type='text' class='form-control' name='app:name' value='Polr'>
 
-            <p>Application Protocol:</p>
+            <p>网站协议:</p>
             <input type='text' class='form-control' name='app:protocol' value='http://'>
 
-            <p>Application URL (path to Polr; do not include http:// or trailing slash):</p>
+            <p>网站地址，例如你的域名（但不要包括http://或者结尾的斜杠）:</p>
             <input type='text' class='form-control' name='app:external_url' value='yoursite.com'>
 
             <p>
-                Advanced Analytics:
-                <button data-content="Enable advanced analytics to collect data such as referers, geolocation, and clicks over time. Enabling advanced analytics reduces performance and increases disk space usage."
+                高级统计:
+                <button data-content="允许高级统计收集数据，如引用、地理位置和点击时间，启用高级统计功能会降低性能并增加磁盘空间的使用。"
                     type="button" class="btn btn-xs btn-default setup-qmark" data-toggle="popover">?</button>
             </p>
             <select name='setting:adv_analytics' class='form-control'>
-                <option value='false' selected='selected'>Disable advanced analytics</option>
-                <option value='true'>Enable advanced analytics</option>
+                <option value='false' selected='selected'>关闭高级统计</option>
+                <option value='true'>开启高级统计</option>
             </select>
 
-            <p>Shortening Permissions:</p>
+            <p>短链接权限:</p>
             <select name='setting:shorten_permission' class='form-control'>
-                <option value='false' selected='selected'>Anyone can shorten URLs</option>
-                <option value='true'>Only logged in users may shorten URLs</option>
+                <option value='false' selected='selected'>任何人都可以缩短链接</option>
+                <option value='true'>只有登录的用户才可以缩短链接</option>
             </select>
 
-            <p>Public Interface:</p>
+            <p>公共接口:</p>
             <select name='setting:public_interface' class='form-control'>
-                <option value='true' selected='selected'>Show public interface (default)</option>
-                <option value='false'>Redirect index page to redirect URL</option>
+                <option value='true' selected='selected'>显示公共接口(默认)</option>
+                <option value='false'>重定向主页面到重定向链接</option>
             </select>
 
-            <p>404s and Disabled Short Links:</p>
+            <p>404页面和禁用短链接:</p>
             <select name='setting:redirect_404' class='form-control'>
-                <option value='false' selected='selected'>Show an error message (default)</option>
-                <option value='true'>Redirect to redirect URL</option>
+                <option value='false' selected='selected'>显示错误信息（默认）</option>
+                <option value='true'>重定向到链接</option>
             </select>
 
             <p>
-                Redirect URL:
-                <setup-tooltip content="Required if you wish to redirect the index page or 404s to a different website. To use Polr, login by directly heading to yoursite.com/login first."></setup-tooltip>
+                重定向链接:
+                <setup-tooltip content="如果您希望将主页或404页面重定向到另一个网站，若要访问，则需要首先访问yoursite.com/login"></setup-tooltip>
             </p>
             <input type='text' class='form-control' name='setting:index_redirect' placeholder='http://your-main-site.com'>
             <p class='text-muted'>
@@ -95,12 +95,12 @@ Setup
             </p>
 
             <p>
-                Default URL Ending Type:
-                <setup-tooltip content="If you choose to use pseudorandom strings, you will not have the option to use a counter-based ending."></setup-tooltip>
+                默认URL结尾类型:
+                <setup-tooltip content="如果您选择使用伪随机字符串，您将无法选择使用基于数字的结尾。"></setup-tooltip>
             </p>
             <select name='setting:pseudor_ending' class='form-control'>
-                <option value='false' selected='selected'>Use base62 or base32 counter (shorter but more predictable, e.g 5a)</option>
-                <option value='true'>Use pseudorandom strings (longer but less predictable, e.g 6LxZ3j)</option>
+                <option value='false' selected='selected'>使用base64或base32(更短但可被预测，例如，5g)</option>
+                <option value='true'>使用伪随机字符串(较长但不太可预测的字符串，例如 6lxz3j)</option>
             </select>
 
             <p>

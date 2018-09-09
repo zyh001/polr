@@ -13,12 +13,12 @@
         </div>
 
         <ul id="navbar" class="nav navbar-collapse collapse navbar-nav" id="nbc">
-		    <li><a href="{{ route('about') }}">About</a></li>
+		    <!--<li><a href="{{ route('about') }}">About</a></li>-->
 
             @if (empty(session('username')))
-                <li class="visible-xs"><a href="{{ route('login') }}">Sign In</a></li>
+                <li class="visible-xs"><a href="{{ route('login') }}">登录</a></li>
                 @if (env('POLR_ALLOW_ACCT_CREATION'))
-                    <li class="visible-xs"><a href="{{ route('signup') }}">Sign Up</a></li>
+                    <li class="visible-xs"><a href="{{ route('signup') }}">注册</a></li>
                 @endif
             @else
                 <li class="visible-xs"><a href="{{ route('admin') }}">Dashboard</a></li>

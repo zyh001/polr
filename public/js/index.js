@@ -24,18 +24,18 @@ $(function() {
         $('#link-availability-status').html('<span><i class="fa fa-spinner"></i> Loading</span>');
         request.done(function(msg) {
             if (msg == 'unavailable') {
-                $('#link-availability-status').html(' <span style="color:red"><i class="fa fa-ban"></i> Already in use</span>');
+                $('#link-availability-status').html(' <span style="color:red"><i class="fa fa-ban"></i> 已被使用</span>');
             } else if (msg == 'available') {
-                $('#link-availability-status').html('<span style="color:green"><i class="fa fa-check"></i> Available</span>');
+                $('#link-availability-status').html('<span style="color:green"><i class="fa fa-check"></i> 有效的</span>');
             } else if (msg == 'invalid') {
-                $('#link-availability-status').html('<span style="color:orange"><i class="fa fa-exclamation-triangle"></i> Invalid Custom URL Ending</span>');
+                $('#link-availability-status').html('<span style="color:orange"><i class="fa fa-exclamation-triangle"></i> 无效的自定义URL</span>');
             } else {
-                $('#link-availability-status').html(' <span style="color:red"><i class="fa fa-exclamation-circle"></i> An error occured. Try again</span>' + msg);
+                $('#link-availability-status').html(' <span style="color:red"><i class="fa fa-exclamation-circle"></i> 发生了一个小错误，请再次尝试</span>' + msg);
             }
         });
 
         request.fail(function(jqXHR, textStatus) {
-            $('#link-availability-status').html(' <span style="color:red"><i class="fa fa-exclamation-circle"></i> An error occured. Try again</span>' + textstatus);
+            $('#link-availability-status').html(' <span style="color:red"><i class="fa fa-exclamation-circle"></i> 发生了一个小错误，请再次尝试</span>' + textstatus);
         });
     });
     min = 1;
@@ -54,10 +54,10 @@ $(function() {
     function changeTips(tcase) {
         switch (tcase) {
             case 1:
-                setTip('Create an account to keep track of your links');
+                setTip('创建一个帐户来跟踪你的链接');
                 break;
             case 2:
-                setTip('Did you know you can change the URL ending by clicking on "Link Options"?');
+                setTip('你知道吗？你可以通过点击“链接选项”来改变URL');
                 i = 1;
                 break;
         }
